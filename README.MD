@@ -12,7 +12,7 @@ Install requirements:
 pip install -r requirements.txt
 ```
 
-## Packgage installation
+## Package installation
 ```bash
 python setup.py build
 python setup.py install
@@ -49,7 +49,7 @@ Make sure the package/library are installed correctly
 ```bash
 python tests/lib_test.py
 ```
-2. Demo on sklearn diabetes dataa
+2. Demo on sklearn diabetes data
 ```bash
 python tests/diabetes_demo.py
 ```
