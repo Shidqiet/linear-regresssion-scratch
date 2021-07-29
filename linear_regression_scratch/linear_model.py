@@ -2,6 +2,7 @@
 Linear Regression Model From Scratch
 """
 import numpy as np
+import warnings
 
 class LinearRegression:
     """
@@ -25,8 +26,8 @@ class LinearRegression:
                 learning_rate: float = 0.01
                 ):
 
-        self.n_iter = n_iter
-        self.learning_rate = learning_rate
+        self.n_iter = self._assert_niter(n_iter)
+        self.learning_rate = self._assert_lr(learning_rate)
         self.loss = []
         self.coef_, self.intercept_ = None, None
 
@@ -38,6 +39,42 @@ class LinearRegression:
             self.loss_function = self._root_mean_squared_error
         else:
             raise ValueError("The loss %s is currently not supported. " % loss_function)
+
+    @staticmethod
+    def _assert_niter(value):
+        try:
+
+            assert value > 0
+
+        except AssertionError as exc:
+
+            raise AssertionError(
+
+                "n_iter value cant be 0 or minus"
+                
+            ) from exc
+        
+        return value
+
+    @staticmethod
+    def _assert_lr(value):
+        try:
+
+            assert value > 0
+
+        except AssertionError as exc:
+
+            raise AssertionError(
+
+                "learning_rate cant be 0 or minus"
+                
+            ) from exc
+        
+        if type(value) != float:
+            warnings.warn("learning_rate value is not float")
+            return float(value)
+        else:
+            return value
 
     @staticmethod
     def _mean_squared_error(y_true, y_pred):
