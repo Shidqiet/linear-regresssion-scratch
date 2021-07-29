@@ -15,8 +15,6 @@ pip install -r requirements.txt
 ## Packgage installation
 ```bash
 python setup.py build
-```
-```bash
 python setup.py install
 ```
 
@@ -32,10 +30,10 @@ y_pred = lr_model.predict(x_test)
 * loss_function: str, default = 'mse'
 
     The loss function to be used. Defaults to 'mse', which gives a mean squared error. The possible options are:
-    1. 'mse' = mean squared error
-    2. 'mae' = mean absolute error
-    3. 'rmse' = root mean squared error.
-
+    * 'mse' = mean squared error
+    * 'mae' = mean absolute error
+    * 'rmse' = root mean squared error
+    
 * n_iter: int, default = 10000
 
     The amount of iteration. Cant be 0 or minus
@@ -45,12 +43,17 @@ y_pred = lr_model.predict(x_test)
     Learning rate value. Cant be 0 or minus
 
 ## Demo/Tests
+1. Library test
+
+Make sure the package/library are installed correctly
 ```bash
-python lib_test.py
+python tests/lib_test.py
 ```
+2. Demo on sklearn diabetes dataa
 ```bash
-python diabetes_demo.py
+python tests/diabetes_demo.py
 ```
+3. Benchmark the result of LinearRegression from linear_regression_scratch and sklearn on diabetes data
 ```bash
-python diabetes_benchmark.py
+python tests/diabetes_benchmark.py
 ```
