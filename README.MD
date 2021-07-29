@@ -5,7 +5,7 @@ By: Shidqie Taufiqurrahman
 
 ## Requirements
 1. numpy
-2. sklearn (for load the dataset and evaluate prediction)
+2. scikit-learn (for load the dataset and evaluate prediction)
 
 Install requirements:
 ```bash
